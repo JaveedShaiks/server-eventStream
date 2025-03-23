@@ -8,9 +8,18 @@ start using file : node livestream.js
 ----acessing from FE
 use you can start and server and replace port number in the FE react applciaion: 
 
-   const eventSource = new EventSource("http://localhost:5000/events");
+access as mentioned in your FE applciation
+
+ useEffect(() => {
+        const eventSource = new EventSource("http://localhost:5000/events");
 
         eventSource.onmessage = (event) => {
             const newMessage = JSON.parse(event.data);
             setMessages((prevMessages) => [...prevMessages, newMessage]);
         };
+
+        fetchData();
+        return () => {
+            eventSource.close();
+        };
+    }, []);
