@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Builder Application</title>
+    <base href="/" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="favicon.ico" id="fav_icon" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,500,600,700&display=swap, Fira Mono"
+      rel="stylesheet"
+    />
+    <style>
+      #editor_view_tooltip {
+        width: fit-content;
+        max-width: 30rem;
+        padding:2rem;
+      
+        display: none;
+      }
+      #editor_selected_content_data {
+        display: none;
+      }
+      .fr-view{
+        font-size: 1.34rem;
+      }
+
+    </style>
+  </head>
+  <body style="margin: 0">
+    <div id="root">fgfgf</div>
+    <div id="editor_view_tooltip"></div>
+    <div id="editor_selected_content_data"></div>
+    <script type="text/javascript">
+      let tenant = '%NX_TENANT%';
+      if ('%NODE_ENV%' === 'production') {
+        console.log = function () {};
+        console.warn = function () {};
+        // console.error = function () {};
+      }
+      if (tenant === 'ROLAI') {
+        document.getElementById('fav_icon').href = './favicons/rolai.ico';
+      } else if (tenant === 'ATOMS') {
+        document.getElementById('fav_icon').href = './favicons/atoms.ico';
+      } else {
+        document.getElementById('fav_icon').href = './favicons/leaps.ico';
+      }
+    </script>
+    <script>
+     
+
+    </script>
+  </body>
+</html>
